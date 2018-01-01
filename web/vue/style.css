@@ -1,0 +1,364 @@
+/*region variables*/
+:root {
+    font-family: Bahnschrift;
+    --bg-dark: #3a383a;
+    --bg-not-so-dark: #525052;
+
+    --color-dark: #121212;
+    --color-normal: #d4d4d4;
+
+    --header-hight: 4em;
+    --sidebar-width: 4em;
+}
+.color-red {
+    color: #d4563d;
+}
+.bg-color-red {
+    background-color: #d4563d;
+}
+.color-orange {
+    color: #ffa115;
+}
+.bg-color-orange {
+    background-color: #ffa115;
+}
+.color-yellow {
+    color: #eeec53;
+}
+.bg-color-yellow {
+    background-color: #eeec53;
+}
+.color-green {
+    color: #22a92f;
+}
+.bg-color-green {
+    background-color: #22a92f;
+}
+.color-blue {
+    color: #36d1ff;
+}
+.bg-color-blue {
+    background-color: #36d1ff;
+}
+.color-dark-blue {
+    color: #5b43a5;
+}
+.bg-color-dark-blue {
+    background-color: #5b43a5;
+}
+.color-pink {
+    color: #ec4fff;
+}
+.bg-color-pink {
+    background-color: #ec4fff;
+}
+/*endregion*/
+/*region reset*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*endregion*/
+/*region layout*/
+body {
+    padding-top: var(--header-hight);
+}
+body header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-hight);
+    background-color: var(--bg-dark);
+}
+body sidebar {
+    display: block;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    padding-top: var(--header-hight);
+    background-color: var(--bg-not-so-dark);
+}
+body content {
+    display: block;
+    position: relative;
+    margin-left: 270px;
+}
+/*endregion*/
+/*region sidebar*/
+body sidebar nav {}
+body sidebar nav li {
+    --li-height: 60px;
+    position: relative;
+    /*overflow: hidden;*/
+    /*width: 100%;*/
+    height: var(--li-height);
+    cursor: pointer;
+    /*background-color: transparent!important;*/
+    color: #000000!important;
+    padding-left: 10px;
+    transition: all 0.2s;
+    transition-timing-function: ease-in;
+}
+body sidebar nav li :before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 5px!important;
+    height: calc(var(--li-height) - 4px);
+    transition: all 0.1s ease-in;
+}
+body sidebar nav li:hover {
+    /*background-color: inherit!important;*/
+    background-color: transparent;
+    padding-left: 65px;
+}
+body sidebar nav li:hover :before {
+    width: 55px;
+}
+@keyframes example {
+    from {
+        top: 0px;
+        width: 5px;
+        height: 0px;
+    }
+    to {
+        top: -100vh;
+        width: 5px;
+        height: 200vh;
+    }
+}
+body sidebar nav li :after {
+    content: "";
+    /*display: none;*/
+}
+/*body sidebar nav li.active :after{*/
+    /*display: block;*/
+    /*position: absolute;*/
+    /*z-index: 2000;*/
+    /*right: 0px;*/
+    /*width: 5px;*/
+    /*height: 7770px;*/
+    /*background-color: black;*/
+    /*animation-name: example;*/
+    /*animation-duration: 0.5s;*/
+    /*animation-fill-mode: forwards;*/
+    /*pointer-events: none;*/
+/*}*/
+body sidebar nav li .initial {
+    background-color: transparent;
+    display: block;
+    font-size: calc(var(--li-height) / 2);
+    font-weight: bold;
+}
+body sidebar nav li .title {
+
+}
+
+body > sidebar > .test-config {
+    height: calc(100% - 59px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: #cccccc;
+    padding-right: 10px;
+}
+
+body > sidebar > .config > .mutator{
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+body > sidebar > .config input {
+    /*float: right;*/
+}
+
+body > sidebar > .config span {
+    /*float: left;*/
+}
+
+/*endregion*/
+/*region form*/
+form {
+    overflow: auto;
+}
+fieldset {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 2px solid #217dbb;
+    border-width: 2px 0 0 0;
+    /*border-radius: 5px;*/
+    /*overflow: auto;*/
+    margin-top: 12px;
+    /*padding-top: 10px;*/
+    padding: 0 0 10px 5px;
+}
+fieldset > legend {
+    font-size: 0.8em;
+    font-weight: bold;
+    font-family: Bahnschrift;
+
+    /*padding-top: 5px;*/
+    text-align: right;
+    padding-right: 10px;
+    /*float: right;*/
+    width: auto;
+    /*padding: 0;*/
+    /*margin-left: -50px;*/
+}
+label {
+    display: flex;
+    align-items: center;
+    width: 98%;
+    height: 22px;
+    line-height: 40px;
+    border: 1px dashed #217dbb;
+    border-width: 0 0 1px 0;
+    justify-content: space-between;
+}
+label > span {
+    float: left;
+    font-size: 0.7em;
+}
+label > input {
+    float: right;
+}
+input {
+    color: #cccccc;
+    background-color: rgba(255, 242, 189, 0.11);
+    border: 0px;
+    border-radius: 2px;
+    box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.75);
+    padding: 3px;
+    margin: 2px;
+    font-size: 0.7em;
+    width: 120px;
+}
+select {
+    color: #cccccc;
+    background-color: rgba(255, 242, 189, 0.11);
+    border: 0px;
+    border-radius: 2px;
+    box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.75);
+    padding: 3px;
+    margin: 2px;
+    font-size: 0.7em;
+    width: 126px;
+}
+
+/*endregion*/
+/*region util*/
+.break:after {
+    content:"\000A";
+    white-space: pre;
+}
+/*endregion*/
+/*region scroll bar*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 33px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px solid #00ff00;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #000000;
+}
+::-webkit-scrollbar-track {
+    background: rgba(84, 84, 84, 0.1);
+    border: 0px inset #ffffff;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+    background: rgba(102, 102, 102, 1);
+}
+::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+/*endregion*/
+
+
+.report {
+    position: relative;
+    width: 40px;
+    height: 15px;
+    background-color: #3a383a;
+    overflow: hidden;
+}
+#result-list {
+}
+body > content > .result-stats {
+    float: left;
+}
+body > content > .result-list-wrapper {
+    float: left;
+    width: 50%;
+    min-height: calc(100vh - var(--header-hight));
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/*.report:hover {*/
+    /*position: absolute;*/
+    /*top: 0px;*/
+    /*left: 0px;*/
+    /*width: auto;*/
+    /*height: auto;*/
+/*}*/

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gekko - mass test</title>
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/libs/jquery.menu-aim.js"></script>
+    <script src="/libs/modernizr.js"></script>
+    <!-- dataTables -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <link href="/libs/iziToast/dist/css/iziToast.css" rel="stylesheet">
+    <script src="/libs/iziToast/dist/js/iziToast.js"></script>
+
+    <script src="/libs/json-formatter.js"></script>
+    <script src="/libs/jenscript/jenscript.js"></script>
+
+    <script src="/jsonForm.js"></script>
+    <script src="/layoutMain.js"></script>
+
+
+    <!--<link href="http://code.fancygrid.com/fancy.min.css" rel="stylesheet">-->
+    <!--<script src="http://code.fancygrid.com/fancy.min.js"></script>-->
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <!--<li><a href="#0">test link</a></li>-->
+            </ul>
+        </nav>
+    </header>
+
+    <sidebar>
+        <nav>
+            <ul>
+                <li class="bg-color-green">
+                    <span class="initial">Ru</span>
+                    <span class="title">Run Test</span>
+                </li>
+            </ul>
+            <!-- other unordered lists here -->
+        </nav>
+        <div class="test-config"></div>
+        <h3>Results</h3>
+        <div class="stats">
+            <span class="title">Average: </span><span class="value average">0</span>%
+        </div>
+    </sidebar>
+    <content>
+        <div class="result-list-wrapper">
+            <table id="result-list"></table>
+        </div>
+        <ul class="result-stats">
+            <li class="relative-profit">
+                <span>Profit: </span><span class="value">-</span>
+            </li>
+            <li class="max-profit">
+                <span>Max Profit: </span><span class="value">-</span>
+            </li>
+            <li class="min-profit">
+                <span>Min Profit: </span><span class="value">-</span>
+            </li>
+
+            <!--
+            alpha: -4160.947225811008
+            asset: "BTC"
+            balance: 93.83504039
+            currency: "USD"
+            endPrice: 5425.4
+            endTime: "2017-10-13 01:28:00"
+            market: 31.582266201008935
+            profit: -4129.3649596099995
+            relativeProfit: -97.77810569260276
+            relativeYearlyProfit: "-1188.47815439"
+            sharpe: -3.0058975406394115
+            startBalance: 4223.2
+            startPrice: 4123.2
+            startTime: "2017-09-13 00:46:00"
+            timespan: "a month"
+            trades: 1249
+            yearlyProfit: "-50191.80941610"
+
+            -->
+        </ul>
+        <div style="padding-top: 20px;">
+            <div  id="graph"></div>
+        </div>
+    </content>
+</body>
+</html>
